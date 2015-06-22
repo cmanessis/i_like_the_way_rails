@@ -15,7 +15,8 @@
 
 You said: I like the way <%= Thought.last.question1 %>
 <% id = Thought.last.id %>
-<div class="fb-send" data-href="localhost:3000/thoughts/"></div>
+<% url = "https://infinite-eyrie-1062.herokuapp.com/thoughts/#{id}"%>
+<div class="fb-send" data-href="<%= url %>"></div>
 </body>
 
 <!-- https://git.heroku.com/fathomless-lake-7820.git/thoughts/#{id} -->
