@@ -13,7 +13,11 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
-You said: I like the way <%= Thought.first.question1 %>
-<div class="fb-send" data-href="https://apps.facebook.com/fathomless-wildwood/submit/"></div>
+You said: I like the way <%= Thought.last.question1 %>
+<% id = Thought.last.id %>
+<div class="fb-send" data-href="localhost:3000/thoughts/"></div>
 </body>
+
+<!-- https://git.heroku.com/fathomless-lake-7820.git/thoughts/#{id} -->
+
 </html>
