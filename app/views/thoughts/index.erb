@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> I like the way </title>
+  </head>
+
+  <body>
+    <h1>I like the way</h1>
+    <p>Tell your friends what you admire about them</p>
+
+    <h3>I like the way...</h3>
+    <form id='thoughts' method='post' action='/submit'>
+
+      <textarea name="thoughts" id='thoughts' cols="50" rows="15"></textarea>
+      <button>Browse</button>
+      <button>Upload Image</button>
+      <button>Cancel</button>
+
+      <button id="send_button">Send</button>
+    </form>
+
+    <%= @friends %>
+
+  </body>
+
+</html>
