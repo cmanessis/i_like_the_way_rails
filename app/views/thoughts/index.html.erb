@@ -10,17 +10,19 @@
     <p>Tell your friends what you admire about them</p>
 
     <h3>I like the way...</h3>
-    <form id='thoughts' method='post' action='/submit'>
+    <%= form_for Thought.new do |f| %>
+      <%= f.label :question1 %>
+      <%= f.text_field :question1 %>
+      <%= f.submit %>
+    <% end %>
 
-      <textarea name="thoughts" id='thoughts' cols="50" rows="15"></textarea>
+
+    <!--   <textarea name="thoughts" id='thoughts' cols="50" rows="15"></textarea>
       <button>Browse</button>
       <button>Upload Image</button>
       <button>Cancel</button>
 
-      <button id="send_button">Send</button>
-    </form>
-
-    <%= @friends %>
+      <button id="send_button">Send</button> -->
 
   </body>
 
