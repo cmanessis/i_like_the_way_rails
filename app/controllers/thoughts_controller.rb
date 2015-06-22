@@ -8,7 +8,14 @@ class ThoughtsController < ApplicationController
   end
 
   def create
-    @thought = current_user
+    @thought = Thought.create(thought_params)
+    if @thought.save
+      redirect_to thought_path(@thought)
+    end
+  end
+
+  def thought_params
+    params.require(:thought).permit(:question1)
   end
 
 end
