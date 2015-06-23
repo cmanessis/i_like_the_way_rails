@@ -6,27 +6,19 @@
 
   <body>
 
-  <p><%= current_user.name || current_user.email %></p>
-  <% if current_user.image %>
-    <div class="fcbk-img"><img src='<%= current_user.image %>'></div>
-  <% end %>
-
-    <p id="description">Tell your friends what you admire about them</p>
-
-
     <h3>I like the way...</h3>
 
        <%= form_for [@target, @thought] do |f| %>
-          <%= f.label :thoughts%>
           </br>
           <%= f.text_area :question1 %>
+          <br>
           <%= f.submit %>
           <%= social_share_button_tag("iltwy") %>
         <% end %>
-
-    <%= @thought_1 %>
-    <%= @thought_2 %>
-    <%= @thought_3 %>
+        <br>
+    <li><%= @thought_1 %></li>
+    <li><%= @thought_2 %></li>
+    <li><%= @thought_3 %></li>
 
   </body>
 

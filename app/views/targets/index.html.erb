@@ -13,22 +13,31 @@
     <% end %>
 
     <% if current_user %>
-     <p><%= current_user.name || current_user.email %></p>
-      Create new target
+      <h3>Friend List</h3
       <br>
-
       <% @target.each do |target| %>
         <li><%= link_to "#{target.name}", new_target_thought_path(target) %></li>
       <% end %>
-
+        <br>
        <%= form_for Target.new do |f| %>
-          <%= f.label :target %>
           <%= f.text_field :name %>
-          <%= f.submit %>
+          <%= f.submit "Add Friend" %>
         <% end %>
 
     <% end %>
 
+    <br>
+    <br>
+    <br>
+
+    <h4> Created by:
+      <br>
+      <br>
+      <li>Chidu</li>
+      <li>Chris</li>
+      <li>Daryl</li>
+      <li>Joanne</li>
+    </h1>
   </body>
 
 </html>

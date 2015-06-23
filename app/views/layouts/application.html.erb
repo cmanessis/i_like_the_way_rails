@@ -10,7 +10,11 @@
 </head>
 <header>
   <% if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <p><%= current_user.name || current_user.email %></p>
+    <% if current_user.image %>
+      <div class="fcbk-img"><img src='<%= current_user.image %>'></div>
+    <% end %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% end %>
 </header>
 
