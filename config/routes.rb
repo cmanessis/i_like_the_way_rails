@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'homes/show'
+  get 'thoughts/index'
 
   devise_for :users
   root to: "thoughts#index"
