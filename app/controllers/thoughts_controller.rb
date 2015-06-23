@@ -13,8 +13,13 @@ class ThoughtsController < ApplicationController
     @thought = current_user.thoughts.new(thought_params)
     @thought.target_id = @target.id
     if @thought.save
-      redirect_to targets_path
+      redirect_to target_thought_path(@target, @thought)
     end
+  end
+
+  def show
+    @target = Target.find(params[:target_id])
+    @thought = Thought.where(target_id: @target.id)
   end
 
   def thought_params
