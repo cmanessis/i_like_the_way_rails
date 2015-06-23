@@ -1,6 +1,11 @@
+require 'thought.rb'
 class ThoughtsController < ApplicationController
 
   def index
+    @thought = Thought.new
+    @thought_1 = @thought.thought_example
+    @thought_2 = @thought.thought_example
+    @thought_3 = @thought.thought_example
   end
 
   def new
@@ -25,5 +30,7 @@ class ThoughtsController < ApplicationController
   def thought_params
     params.require(:thought).permit(:question1)
   end
+
+
 
 end
