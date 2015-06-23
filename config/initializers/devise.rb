@@ -241,8 +241,6 @@ Devise.setup do |config|
   config.omniauth :facebook,
                   Rails.application.secrets.iltwyid,
                   Rails.application.secrets.iltwysecret,
-                  scope: 'public_profile',
-                  display: 'popup'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

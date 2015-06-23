@@ -19,7 +19,7 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
-You said: I like the way <%= Thought.last.question1 %>
+<%= current_user.name %> said: I like the way <%= Thought.last.question1 %>
 <% id = Thought.last.id %>
 <% url = "https://infinite-eyrie-1062.herokuapp.com/thoughts/#{id}"%>
 <div class="fb-send" data-href="<%= url %>"></div>
