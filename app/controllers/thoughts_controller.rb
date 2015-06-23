@@ -1,16 +1,16 @@
-require 'thought.rb'
+include ThoughtsHelper
 class ThoughtsController < ApplicationController
 
   def index
     @thought = Thought.new
-    @thought_1 = @thought.thought_example
-    @thought_2 = @thought.thought_example
-    @thought_3 = @thought.thought_example
   end
 
   def new
     @target = Target.find(params[:target_id])
     @thought = Thought.new
+    @thought_1 = thought_example
+    @thought_2 = thought_example
+    @thought_3 = thought_example
   end
 
   def create
