@@ -25,6 +25,7 @@ class ThoughtsController < ApplicationController
   def show
     @target = Target.find(params[:target_id])
     @thought = Thought.where(target_id: @target.id)
+    @url = request.original_url
   end
 
   def thought_params

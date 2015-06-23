@@ -6,10 +6,12 @@
 
   <body>
 
-    <h1>I LIKE THE WAY</h1>
-    <p id="description">Tell your friends what you admire about them</p>
+    <% if !current_user %>
+      <%= link_to image_tag('http://www.iheartny.us/assets/facebook-3e8549b55d78271e7316b34b6f2afd68.png', width: 250), user_omniauth_authorize_path(:facebook) %>
+      <br>
+      <%= link_to "Email Sign up", new_user_registration_path %>
+    <% end %>
 
-    <h3>I like the way...</h3>
     <% if current_user %>
      <p><%= current_user.name || current_user.email %></p>
       Create new target

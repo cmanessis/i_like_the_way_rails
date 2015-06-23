@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <h1>iLtwy</h1>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,21 +8,24 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<header>
+  <% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% end %>
+</header>
+
+<body><center>
 
   <section>
   <h1 style= "text-align: center;">iLtwy</h1>
-  <h3 style= "text-align: center;">iLtwy</h3>
+  <h3 style= "padding-bottom: 5%; text-align: center;">Tell your friends what you admire about them...</h3>
 
-  <% if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <% end %>
+<div class="container-img">
+  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Speech_bubble.svg/1280px-Speech_bubble.svg.png' height='400' width='400' style="padding-bottom: 5%;">
+</div>
 
 <%= yield %>
 
 </section>
-</body>
+</center></body>
 </html>
