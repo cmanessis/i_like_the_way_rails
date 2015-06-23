@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+  <script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=383744588496405";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+<%= current_user.name %> said: I like the way <%= Thought.last.question1 %>
+<% id = Thought.last.id %>
+<% url = "https://infinite-eyrie-1062.herokuapp.com/thoughts/#{id}"%>
+<div class="fb-send" data-href="<%= url %>"></div>
+</body>
+
+</html>
