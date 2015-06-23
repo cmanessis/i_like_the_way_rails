@@ -5,8 +5,9 @@ feature 'User arrives on the main page' do
     visit '/'
     signup("test@test.com")
     add_target 'Joanne'
-    expect(page).to have_content 'I like the way...'
-    fill_in 'thought_question1', with: 'you move!'
+    expect(page).to have_content 'Joanne'
+    click_link 'Joanne'
+    fill_in 'thought_question1', with: 'I like the way you move!'
     expect { click_button 'Create Thought' }.to change { Thought.count }.by 1
   end
 
@@ -14,10 +15,9 @@ feature 'User arrives on the main page' do
     visit '/'
     signup("test@test.com")
     add_target 'Joanne'
-    expect(page).to have_content 'I like the way...'
-    fill_in 'thought_question1', with: 'you move!'
+    click_link 'Joanne'
+    fill_in 'thought_question1', with: 'I like the way you move!'
     click_button 'Create Thought'
-    expect(page).to have_content 'said: I like the way you move!'
-    p Thought.all
+    expect(page).to have_content 'Things I like about Joanne I like the way you move!'
   end
 end
