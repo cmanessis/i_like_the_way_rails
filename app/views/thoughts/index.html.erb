@@ -4,7 +4,6 @@
   <head>
     <title> I like the way </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="application.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
   </head>
 
@@ -12,20 +11,21 @@
 
   <div class="user_info">
     <img>
-    <p>username</p>
+
   </div>
     <h1>I LIKE THE WAY</h1>
     <p id="description">Tell your friends what you admire about them</p>
 
     <input type="text" placeholder="that special person">
     <h3>I like the way...</h3>
-
-
-   <%= form_for Thought.new do |f| %>
-      <%= f.label :question1 %>
-      <%= f.text_field :question1 %>
-      <%= f.submit %>
-      <%= social_share_button_tag("iltwy") %>
+    <% if current_user %>
+     <p><%= current_user.name %></p>
+       <%= form_for Thought.new do |f| %>
+          <%= f.label :question1 %>
+          <%= f.text_field :question1 %>
+          <%= f.submit %>
+          <%= social_share_button_tag("iltwy") %>
+        <% end %>
     <% end %>
 
 

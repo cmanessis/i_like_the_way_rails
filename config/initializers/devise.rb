@@ -240,7 +240,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook,
                   Rails.application.secrets.iltwyid,
-                  Rails.application.secrets.iltwysecret,
+                  Rails.application.secrets.iltwysecret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
