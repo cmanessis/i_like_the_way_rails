@@ -8,7 +8,10 @@ class ThoughtsController < ApplicationController
   end
 
   def create
-    @thought = Thought.create(thought_params)
+    name = params[:target]
+    @target = Target.create(name: name)
+    @thought = current_user.thoughts.new(thought_params)
+    @thought.target_id =@target.id
     if @thought.save
       redirect_to thought_path(@thought)
     end

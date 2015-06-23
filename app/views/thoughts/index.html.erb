@@ -16,11 +16,12 @@
     <h1>I LIKE THE WAY</h1>
     <p id="description">Tell your friends what you admire about them</p>
 
-    <input type="text" placeholder="that special person">
     <h3>I like the way...</h3>
     <% if current_user %>
-     <p><%= current_user.name %></p>
+     <p><%= current_user.name || current_user.email %></p>
        <%= form_for Thought.new do |f| %>
+          <%= f.label :target %>
+          <%= f.text_field :target %>
           <%= f.label :question1 %>
           <%= f.text_field :question1 %>
           <%= f.submit %>
