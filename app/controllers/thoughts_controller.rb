@@ -1,9 +1,11 @@
+require 'thought.rb'
 class ThoughtsController < ApplicationController
 
   def index
-    @thought_1 = thought_example
-    @thought_2 = thought_example
-    @thought_3 = thought_example
+    @thought = Thought.new
+    @thought_1 = @thought.thought_example
+    @thought_2 = @thought.thought_example
+    @thought_3 = @thought.thought_example
   end
 
   def new
