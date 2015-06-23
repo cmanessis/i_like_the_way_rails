@@ -8,7 +8,7 @@ class ThoughtsController < ApplicationController
   end
 
   def create
-    name = params[:target]
+    name = params[:thought_target]
     @target = Target.create(name: name)
     @thought = current_user.thoughts.new(thought_params)
     @thought.target_id =@target.id
