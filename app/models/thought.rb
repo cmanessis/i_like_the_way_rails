@@ -1,6 +1,7 @@
 class Thought < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :target
 
 def thought_example
   array = ['You are an excellent cook',

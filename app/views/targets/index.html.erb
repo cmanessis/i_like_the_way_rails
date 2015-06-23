@@ -16,21 +16,24 @@
     <h1>I LIKE THE WAY</h1>
     <p id="description">Tell your friends what you admire about them</p>
 
-    <input type="text" placeholder="that special person">
     <h3>I like the way...</h3>
     <% if current_user %>
-     <p><%= current_user.name %></p>
-       <%= form_for Thought.new do |f| %>
-          <%= f.label :question1 %>
-          <%= f.text_field :question1 %>
+     <p><%= current_user.name || current_user.email %></p>
+      Create new target
+      <br>
+
+      <% @target.each do |target| %>
+        <li><%= link_to "#{target.name}", new_target_thought_path(target) %></li>
+      <% end %>
+
+       <%= form_for Target.new do |f| %>
+          <%= f.label :target %>
+          <%= f.text_field :name %>
           <%= f.submit %>
-          <%= social_share_button_tag("iltwy") %>
         <% end %>
+
     <% end %>
 
-    <%= @thought_1 %>
-    <%= @thought_2 %>
-    <%= @thought_3 %>
 
     <!--   <textarea name="thoughts" id='thoughts' cols="50" rows="15"></textarea>
       <button>Browse</button>

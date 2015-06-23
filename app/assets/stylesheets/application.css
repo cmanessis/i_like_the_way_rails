@@ -10,6 +10,7 @@
 
  #send_button { margin-top: 7%;}
 
- *= require_tree .
+ /**= require_tree .
  *= require_self
  *= require social-share-button
+*/

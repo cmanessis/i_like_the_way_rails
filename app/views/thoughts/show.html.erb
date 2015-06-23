@@ -2,8 +2,8 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
 
 </head>
@@ -19,8 +19,18 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
-<%= current_user.name %> said: I like the way <%= Thought.last.question1 %>
+<%= current_user.name %>
+<br>
+Things I like about <%= @target.name %>
+
+  <% @thought.each do |thought| %>
+    <li><%= thought.question1 %></li>
+  <% end %>
 <% id = Thought.last.id %>
+
+
+
+
 <% url = "https://infinite-eyrie-1062.herokuapp.com/thoughts/#{id}"%>
 <div class="fb-send" data-href="<%= url %>"></div>
 </body>
