@@ -1,19 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
 
-  <script>
-    (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=383744588496405";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
+  <head>
+    <title> I like the way </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+  </head>
 
-You said: I like the way <%= @thought %>
-<div class="fb-send" data-href="https://apps.facebook.com/fathomless-wildwood/submit/"></div>
-</body>
+  <body>
+
+    <div class="user_info">
+      <img>
+      <p>username</p>
+    </div>
+
+
+    <h1>I LIKE THE WAY</h1>
+    <p id="description">This is what "john" thinks of you</p>
+
+  </body>
+
+  <div class="Thoughts">
+    <img>
+    <p>user_thoughts:</p>
+  </div>
+
 </html>
