@@ -1,5 +1,10 @@
 class TargetsController < ApplicationController
 
+  def index
+    @target = Target.all
+  end
+
+
   def new
     @target = Target.new
   end

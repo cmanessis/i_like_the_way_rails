@@ -7,6 +7,5 @@ feature 'User arrives on the main page' do
     expect(page).to have_content 'I like the way...'
     fill_in 'target_name', with: 'Joanne'
     expect { click_button 'Create Target' }.to change { Target.count }.by 1
-    p Target.all
   end
 end

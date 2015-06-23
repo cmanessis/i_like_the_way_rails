@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> I like the way </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+  <div class="user_info">
+    <img>
+
+  </div>
+    <h1>I LIKE THE WAY</h1>
+    <p id="description">Tell your friends what you admire about them</p>
+
+    <h3>I like the way...</h3>
+    <% if current_user %>
+     <p><%= current_user.name || current_user.email %></p>
+      Create new target
+      <br>
+
+      <% @target.each do |target| %>
+        <li><%= link_to "#{target.name}", new_target_thought_path(target) %></li>
+      <% end %>
+
+       <%= form_for Target.new do |f| %>
+          <%= f.label :target %>
+          <%= f.text_field :name %>
+          <%= f.submit %>
+        <% end %>
+
+    <% end %>
+
+
+    <!--   <textarea name="thoughts" id='thoughts' cols="50" rows="15"></textarea>
+      <button>Browse</button>
+      <button>Upload Image</button>
+      <button>Cancel</button>
+>>>>>>> ad7886e47131e0aebd9561ee14b1b36f5880c929
+
+      <textarea name="thoughts" cols="50" rows="10"></textarea>
+      </br>
+      <button class="photo_button">Add Image</button>
+      <button class="photo_button">Upload Image</button>
+      <button class="photo_button">Cancel</button>
+      </br>
+      <button id="send_button">Send</button>
+    </form> -->
+
+  </body>
+
+</html>

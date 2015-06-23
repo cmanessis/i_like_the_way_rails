@@ -20,14 +20,7 @@
     <% if current_user %>
      <p><%= current_user.name || current_user.email %></p>
 
-       <%= form_for Target.new do |f| %>
-          <%= f.label :target %>
-          <%= f.text_field :name %>
-          <%= f.submit %>
-        <% end %>
-
-
-       <%= form_for Thought.new do |f| %>
+       <%= form_for [@target, @thought] do |f| %>
           <%= f.label :question1 %>
           <%= f.text_field :question1 %>
           <%= f.submit %>

@@ -16,3 +16,9 @@ def signin(email)
   fill_in("Password", with: 'testtest')
   click_button('Log in')
 end
+
+def add_target(name)
+  visit '/'
+  fill_in 'target_name', with: 'Joanne'
+  click_button 'Create Target'
+end
